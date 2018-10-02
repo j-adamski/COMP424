@@ -1,0 +1,49 @@
+body{
+  font-family: Helvetica, Monospace;
+  font-size: 18px;
+  line-height: 2;
+  padding:0;
+  margin:0;
+  background-color: #cce0ff;
+}
+
+.container{
+  width:80%;
+  margin:auto; <!-- move to middle>
+  overflow:hidden;
+}
+
+/* Header */
+header{
+  background:#000000;
+  color:#FFFFFF;
+  padding-top:30px;
+  min-height:70px;
+  border-bottom:#ffffff 3px solid;
+}
+
+header a{
+  color:#ffffff;
+  text-decoration:none; /* remove underline under nav links*/
+  text-transform:uppercase;
+  font-size:25px;
+}
+
+header ul{
+  margin:0;
+  padding:0;
+}
+
+header li{
+  float:left;
+  display:inline;
+  padding:0 20px 0 20px; /* top, right, bottom, left*/
+}
+
+header #headerNavigation{
+  float:left;
+}
+
+header nav{
+  float:right;
+}
