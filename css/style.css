@@ -13,6 +13,7 @@ body{
   overflow:hidden;
 }
 
+
 /* Header */
 header{
   background:#000000; ##565656
@@ -58,10 +59,24 @@ header a:hover{
 /* Main Banner Image */
 #homeBanner{
   min-height:800px;
-
   text-align:center;
   color:#FFFFFF;
 }
+
+/* Steps below Banner */
+.img-container{
+  text-align: center;
+}
+
+.img-container .step{
+  display: inline-block;
+  padding:15px;
+  padding-top: 30px;
+  padding-bottom:50px;
+}
+
+
+
 
 
 footer{
