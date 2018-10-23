@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- SEO -->
+    <meta name = "description" content="Enter description here">
+    <meta name = "keywords" content="Enter keywords here">
+
+    <title>MyRésumé</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style type="text/css">
+      .container{
+        width: 100%;
+      }
+      .progressbar{
+        counter-reset: step;
+      }
+      .progressbar li {
+        list-style-type: none;
+        float: left;
+        width: 15%;
+        position: relative;
+        text-align: center;
+      }
+      .progressbar li:before{
+        content: counter(step);
+        counter-increment: step;
+        width:50px;
+        height:50px;
+        line-height: 50px;
+        border: 3px solid #FFFFFF;
+        display: block;
+        text-align: center;
+        margin:0 auto 10px auto;
+        border-radius: 60%;
+        background-color: #FFFFFF;
+      }
+      .progressbar li:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        background-color: #FFFFFF;
+        top:25px;
+        left: -50%;
+        z-index: -1;
+      }
+      .progressbar li:first-child::after{
+        content:none;
+      }
+      .progressbar li:active{
+        color:green;
+      }
+
+      .progressbar li.active:before{
+        border-color: green;
+      }
+      .progressbar li.active + li:after{
+        background-color:green;
+      }
+
+
+    </style>
+
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+         <div id="branding">
+           <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
+         </div>
+         <nav>
+          <ul>
+            <li><a href="signin.html">signin</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="build.html">Build</a></li>
+          </ul>
+         </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <ul class="progressbar">
+        <li class="active">Choose template</li>
+        <li>Enter Information</li>
+        <li>Edit</li>
+        <li>Download</li>
+      </ul>
+    </div>
+
+    <br><br><br>
+
+    <div id="resumeForm">
+
+      <div class="progress"></div>
+    </div>
+    <form>
+      <div class="item">
+          <label>Name</label>
+            <input type="name" placeholder="Full Name" autocomplete="false">
+      </div>
+
+      <div class="item">
+        <label>Phone number</label>
+        <input type="phone" placeholder="*** *** ****" autocomplete="false">
+      </div>
+
+      <div class="item">
+        <label>E-mail</label>
+        <input type="email" placeholder="E-mail@Website" autocomplete="false">
+      </div>
+
+    </form>
+
+
+
+
+
+  <footer>
+    <p>MyRésumé, Copyright &copy; 2018</p>
+  </footer>
+  </body>
+</html>
