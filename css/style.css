@@ -75,18 +75,18 @@ header a:hover{
   padding-bottom:50px;
 }
 
-.aboutPage{
+.signin{
   text-align: center;
 }
 
-.about-container .aboutimg{
-  display: inline-block;
-  padding: 15px;
-  padding-top:30px;
-
+.background{
+  background-image: url("./img/banner.png");
+  min-height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
-
-
 
 footer{
   padding:15px;
