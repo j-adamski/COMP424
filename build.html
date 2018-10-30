@@ -20,16 +20,25 @@
     <style type="text/css">
       .container{
         width: 100%;
+
+
       }
       .progressbar{
         counter-reset: step;
+
+
+
+
+
       }
       .progressbar li {
+        left: 37%;
         list-style-type: none;
         float: left;
-        width: 15%;
+        width: 8%;
         position: relative;
         text-align: center;
+
       }
       .progressbar li:before{
         content: counter(step);
@@ -126,6 +135,12 @@ input.invalid {
   margin-right:auto;
 }
 
+.save-container{
+  width: 100%;
+  margin-left: auto;
+  margin-right:auto;
+
+}
 
 
     </style>
@@ -153,7 +168,7 @@ input.invalid {
     <div class="container">
       <ul class="progressbar">
         <li class="active">Choose template</li>
-        <li>Enter Information</li>
+
         <li>Edit</li>
         <li>Download</li>
       </ul>
@@ -232,7 +247,7 @@ $("select").imagepicker({
 <div class="tab"><center><h1>Edit</h1></center>
   <div class="canvas-container">
 
-  <canvas id="c" width="842" height="1191" style="border: 2px solid black;"></canvas>
+<canvas id="c" width="842" height="1191" style="border: 2px solid black;"></canvas>
   <script>
 
   var canvas = new fabric.Canvas('c', { selection: false });
@@ -281,19 +296,25 @@ canvas.on('object:moving', function(options) {
 });
 
 
-
   </script>
 </div>
 </div>
 
 
-
-
 <div class="tab"><center><h1>Download</h1></center>
-<input type="button" value="Download"/>
+<div class="save-container">
 
 
+<input type="submit" name="submit" id="save" value="Saved" />
 
+<script>
+$(document).on("click", "#save", function() {
+  var win=window.open();
+  win.document.write("<img src='"+canvas.toDataURL()+"'/>");
+});
+</script>
+
+</div>
 </div>
 
 <div style="overflow:auto;">
@@ -310,16 +331,6 @@ canvas.on('object:moving', function(options) {
   <span class="step"></span>
 </div>
 </form>
-
-
-
-
-
-
-
-
-
-
 
 
 <script>
