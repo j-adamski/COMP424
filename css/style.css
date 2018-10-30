@@ -79,6 +79,45 @@ header a:hover{
   text-align: center;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 10px;
+  grid-template-areas:
+    "side header1"
+    "side header2"
+    "content content";
+    padding: 5px;
+}
+
+.blogFact{
+  grid-area: side;
+  border: 1px solid #779eab;
+  padding: 5px;
+  text-align: center;
+}
+
+.example1 {
+  grid-area: header1;
+  border: 1px solid #779eab;
+  padding: 5px;
+}
+
+.example2 {
+  grid-area: header2;
+  border: 1px solid #779eab;
+  padding: 5px;
+}
+
+.content{
+  grid-area: content;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+
 .background{
   background-image: url("./img/banner.png");
   min-height: 800px;
