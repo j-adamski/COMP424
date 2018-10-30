@@ -226,13 +226,37 @@ $("select").imagepicker({
 </script>
 </div>
 
+
+
 <script src="assets/fabric.min.js"></script>
 <div class="tab"><center><h1>Edit</h1></center>
   <div class="canvas-container">
 
-  <canvas id="c" width="800" height="1000" style="border: 2px solid black;"></canvas>
+  <canvas id="c" width="842" height="1191" style="border: 2px solid black;"></canvas>
   <script>
-  var canvas = new fabric.Canvas('c');
+
+  var canvas = new fabric.Canvas('c', { selection: false });
+  var grid = 20;
+
+// add objects
+canvas.add(new fabric.Circle({
+  left: 300,
+  top: 300,
+  radius: 50,
+  fill: '#9f9',
+  originX: 'left',
+  originY: 'top',
+  centeredRotation: true
+}));
+
+// snap to grid
+canvas.on('object:moving', function(options) {
+  options.target.set({
+    left: Math.round(options.target.left / grid) * grid,
+    top: Math.round(options.target.top / grid) * grid
+  });
+});
+
 
 
   </script>
@@ -242,10 +266,11 @@ $("select").imagepicker({
 
 
 
-
-
 <div class="tab"><center><h1>Download</h1></center>
-  <h1> placeholder</h1>
+<input type="button" value="Download"/>
+
+
+
 </div>
 
 <div style="overflow:auto;">
