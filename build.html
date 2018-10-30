@@ -239,15 +239,38 @@ $("select").imagepicker({
   var grid = 20;
 
 // add objects
-canvas.add(new fabric.Circle({
-  left: 300,
-  top: 300,
-  radius: 50,
-  fill: '#9f9',
-  originX: 'left',
-  originY: 'top',
-  centeredRotation: true
-}));
+
+var text = new fabric.IText('Full Name', {
+  fontFamily: 'Delicious_500',
+  top: 50,
+  fontSize: 45,
+  hasBorders: true,
+  hasControls: true,
+  cornerStyle: 'circle',
+  lockRotation: true,
+  hasControls: true,
+  lockUniScaling: true,
+  hasRotatingPoint: false,
+})
+
+var contact = new fabric.IText('Location  •  E-mail@site.com •  (000) 000-0000', {
+  fontFamily: 'Delicious_500',
+  top: 115,
+  fontSize: 20,
+  hasBorders: true,
+  hasControls: true,
+  cornerStyle: 'circle',
+  lockRotation: true,
+  hasControls: true,
+  lockUniScaling: true,
+  hasRotatingPoint: false,
+})
+
+
+
+canvas.add(text, contact);
+text.centerH();
+contact.centerH();
 
 // snap to grid
 canvas.on('object:moving', function(options) {
