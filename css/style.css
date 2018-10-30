@@ -81,19 +81,19 @@ header a:hover{
 
 .wrapper {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
   column-gap: 5px;
   row-gap: 10px;
   grid-template-areas:
-    "sideHeader ex"
-    "fact1 content"
-    "fact2 content";
+    "overfact exam"
+    "overfact content"
+    "overfact content";
     padding: 5px;
 }
 
 .blogFact{
-  grid-area: sideHeader;
+  grid-area: overfact;
   border: 1px solid #779eab;
   padding: 5px;
   text-align: center;
@@ -105,23 +105,11 @@ header a:hover{
   padding: 5px;
 }
 
-.fact2{
-  grid-area: fact2;
+.exam {
+  grid-area: exam;
   border: 1px solid #779eab;
   padding: 5px;
-}
-
-.example {
-  grid-area: ex;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-templte-rows: 1fr;
-  column-gap: 5px;
-  row-gap: 10px;
-  grid-template-areas:
-    "ex1 ex2"
-    padding: 5px;
-    border: 1px solid #779eab;
+  text-align: center;
 }
 
 .example1 {
@@ -130,37 +118,19 @@ header a:hover{
   padding: 5px;
 }
 
-.example2 {
-  grid-area: ex2;
-  border: 1px solid #779eab;
-  padding: 5px;
-}
 
 .content {
   grid-area: content;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-templte-rows: 1fr 1fr;
-  column-gap: 5px;
-  row-gap: 10px;
-  grid-template-areas:
-    "con1";
-    "con2";
-    padding: 5px;
-    border: 1px solid #779eab;
+  border: 1px solid #779eab;
+  padding: 5px;
+  text-align: center;
 }
 
 .content1 {
-  grid-area: con1;
   border: 1px solid #779eab;
   padding: 5px;
 }
 
-.content2 {
-  grid-area: con2;
-  border: 1px solid #779eab;
-  padding: 5px;
-}
 
 .background{
   background-image: url("./img/banner.png");
