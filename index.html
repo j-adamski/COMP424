@@ -7,7 +7,25 @@
 
     <!-- SEO -->
     <meta name = "description" content="Enter description here">
-    <meta name = "keywords" content="Enter keywords here">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCt5VsRDktJtu7Du6inayQ5D33-6rEuLL4",
+            authDomain: "myresume-281f2.firebaseapp.com",
+            databaseURL: "https://myresume-281f2.firebaseio.com",
+            projectId: "myresume-281f2",
+            storageBucket: "myresume-281f2.appspot.com",
+            messagingSenderId: "862304909183"
+        };
+        firebase.initializeApp(config);
+
+        function signIn(){
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider);
+        }
+    </script>
 
     <title>MyRésumé</title>
     <link rel="stylesheet" href="./css/style.css">
@@ -20,7 +38,7 @@
          </div>
          <nav>
           <ul>
-            <li><a href="signin.html">Sign In</a>
+            <li><a href="#" onclick="signIn();">Sign In</a>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="resources.html">Resources</a></li>
@@ -56,33 +74,6 @@
       </div>
     </div>
   </section>
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCt5VsRDktJtu7Du6inayQ5D33-6rEuLL4",
-        authDomain: "myresume-281f2.firebaseapp.com",
-        databaseURL: "https://myresume-281f2.firebaseio.com",
-        projectId: "myresume-281f2",
-        storageBucket: "myresume-281f2.appspot.com",
-        messagingSenderId: "862304909183"
-      };
-      firebase.initializeApp(config);
-
-      function signIn(){
-        function successfulLogIn(name){
-          if(name){
-            app(name);
-          }else {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            furebase.auth().signInWithRedirect(provider);
-          }
-        }
-      }
-
-      function app(name){
-        document.getElementById("clientName").innerHTML = hello;}
-    </script>
   <footer>
     <p>MyRésumé, Copyright &copy; 2018</p>
   </footer>
