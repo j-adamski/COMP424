@@ -79,44 +79,88 @@ header a:hover{
   text-align: center;
 }
 
-.grid {
+.wrapper {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: auto auto;
   grid-template-rows: 1fr 1fr 1fr;
   column-gap: 5px;
   row-gap: 10px;
   grid-template-areas:
-    "side header1"
-    "side header2"
-    "content content";
+    "sideHeader ex"
+    "fact1 content"
+    "fact2 content";
     padding: 5px;
 }
 
 .blogFact{
-  grid-area: side;
+  grid-area: sideHeader;
   border: 1px solid #779eab;
   padding: 5px;
   text-align: center;
 }
 
+.fact1 {
+  grid-area: fact1;
+  border: 1px solid #779eab;
+  padding: 5px;
+}
+
+.fact2{
+  grid-area: fact2;
+  border: 1px solid #779eab;
+  padding: 5px;
+}
+
+.example {
+  grid-area: ex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-templte-rows: 1fr;
+  column-gap: 5px;
+  row-gap: 10px;
+  grid-template-areas:
+    "ex1 ex2"
+    padding: 5px;
+    border: 1px solid #779eab;
+}
+
 .example1 {
-  grid-area: header1;
+  grid-area: ex1;
   border: 1px solid #779eab;
   padding: 5px;
 }
 
 .example2 {
-  grid-area: header2;
+  grid-area: ex2;
   border: 1px solid #779eab;
   padding: 5px;
 }
 
-.content{
+.content {
   grid-area: content;
-  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-templte-rows: 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 10px;
+  grid-template-areas:
+    "con1";
+    "con2";
+    padding: 5px;
+    border: 1px solid #779eab;
+}
+
+.content1 {
+  grid-area: con1;
+  border: 1px solid #779eab;
   padding: 5px;
 }
 
+.content2 {
+  grid-area: con2;
+  border: 1px solid #779eab;
+  padding: 5px;
+}
 
 .background{
   background-image: url("./img/banner.png");
