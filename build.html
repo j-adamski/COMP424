@@ -227,12 +227,30 @@ input.invalid {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="scripts/image-picker.min.js"></script>
 <script src="scripts/image-picker.js"></script>
+
+<script src="templates/template1.js"></script>
+
 <script>
 
+
 $("select").imagepicker({
-  hide_select : true,
-  show_label  : false
-})
+  hide_select : false,
+  show_label  : false,
+  selected: function(option){
+    var values = this.val();
+    addTemplate(values);
+    alert(values);
+  }
+});
+
+
+function addTemplate(value){
+if (value==3){
+  template1();
+  }
+}
+
+
 </script>
 </div>
 
@@ -243,9 +261,22 @@ $("select").imagepicker({
   <div class="canvas-container">
 
 <canvas id="c" width="1042" height="1391" style="border: 2px solid black;"></canvas>
+<script>
+// add objects
+var canvas = new fabric.Canvas('c', { selection: false });
+var grid = 20;
 
- <!-- Using example template -->
-  <script src="templates/template1.js"></script>
+//snap to grid
+canvas.on('object:moving', function(options) {
+  options.target.set({
+    left: Math.round(options.target.left / grid) * grid,
+    top: Math.round(options.target.top / grid) * grid
+  });
+});
+
+
+
+</script>
 
 </div>
 </div>
