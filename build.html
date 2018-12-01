@@ -25,11 +25,6 @@
       }
       .progressbar{
         counter-reset: step;
-
-
-
-
-
       }
       .progressbar li {
         left: 37%;
@@ -247,125 +242,20 @@ $("select").imagepicker({
 <div class="tab"><center><h1>Edit</h1></center>
   <div class="canvas-container">
 
-<canvas id="c" width="842" height="1191" style="border: 2px solid black;"></canvas>
-  <script>
+<canvas id="c" width="1042" height="1391" style="border: 2px solid black;"></canvas>
 
-  var canvas = new fabric.Canvas('c', { selection: false });
-  var grid = 20;
+ <!-- Using example template -->
+  <script src="scripts/templates/template1.js"></script>
 
-// add objects
-
-var text = new fabric.IText('Full Name', {
-  fontFamily: 'Delicious_500',
-  top: 50,
-  fontSize: 45,
-  hasBorders: true,
-  hasControls: true,
-  cornerStyle: 'circle',
-  lockRotation: true,
-  hasControls: true,
-  lockUniScaling: true,
-  hasRotatingPoint: false,
-})
-
-var rect = new fabric.Rect({
-  top: 157,
-  fill: 'rgba(202, 221, 220, 1)',
-  width: 842,
-  height: 1086,
-});
-
-
-var contact = new fabric.IText('Location  •  E-mail@site.com •  (000) 000-0000', {
-  fontFamily: 'Delicious_500',
-  top: 115,
-  fontSize: 20,
-  hasBorders: true,
-  hasControls: true,
-  cornerStyle: 'circle',
-  lockRotation: true,
-  hasControls: true,
-  lockUniScaling: true,
-  hasRotatingPoint: false,
-})
-
-var education= new fabric.IText('School Name\nDegree type\nAwards, clubs, etc', {
-  fontFamily: 'Delicious_500',
-  top: 170,
-  left: 40,
-  fontSize: 20,
-  hasBorders: true,
-  hasControls: true,
-  cornerStyle: 'circle',
-  lockRotation: true,
-  hasControls: true,
-  lockUniScaling: true,
-  hasRotatingPoint: false,
-})
-
-
-var job= new fabric.IText('Job title\nCompany name and location\n• info info info info\n• info info info info', {
-  fontFamily: 'Delicious_500',
-  top: 280,
-  left: 40,
-  fontSize: 20,
-  hasBorders: true,
-  hasControls: true,
-  cornerStyle: 'circle',
-  lockRotation: true,
-  hasControls: true,
-  lockUniScaling: true,
-  hasRotatingPoint: false,
-})
-
-var job1 = new fabric.IText('Job title\nCompany name and location\n• info info info info\n• info info info info', {
-  fontFamily: 'Delicious_500',
-  top: 435,
-  left: 40,
-  fontSize: 20,
-  hasBorders: true,
-  hasControls: true,
-  cornerStyle: 'circle',
-  lockRotation: true,
-  hasControls: true,
-  lockUniScaling: true,
-  hasRotatingPoint: false,
-})
-
-
-
-canvas.add(rect, text, contact,education,job, job1);
-text.centerH();
-contact.centerH();
-
-// snap to grid
-canvas.on('object:moving', function(options) {
-  options.target.set({
-    left: Math.round(options.target.left / grid) * grid,
-    top: Math.round(options.target.top / grid) * grid
-  });
-});
-
-
-  </script>
 </div>
 </div>
 
 
 <div class="tab"><center><h1>Download</h1></center>
-<div class="save-container">
-
-
-<input type="submit" name="submit" id="save" value="Download" />
-
-<script>
-$(document).on("click", "#save", function() {
-  var win=window.open();
-  win.document.write("<img src='"+canvas.toDataURL()+"'/>");
-});
-</script>
-
-</div>
+  <div class="save-container">
+  <input type="submit" name="submit" id="save" value="Download" />
+    <script src="scripts/build/save.js"></script>
+  </div>
 </div>
 
 <div style="overflow:auto;">
@@ -385,7 +275,7 @@ $(document).on("click", "#save", function() {
 
 
 <script>
-// Edited from https://www.w3schools.com/howto/howto_js_form_steps.asp
+
 
 var currentTab = 0;
 showTab(currentTab);
