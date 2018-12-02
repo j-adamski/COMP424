@@ -130,16 +130,22 @@ if (value==2){
 
 
 <script src="scripts/fabric.min.js"></script>
-<div class="tab"><center><h1>Edit</h1></center>
-  <div id="header"></div>
+<div class="tab">
+
+
+  <div class = "nav-container">
+  <center><h1>Edit</h1></center>
+
+
+  <div id="header2"></div>
   <div id="menu"></div>
 
-
+</div>
 
         <script>
 
 $(document).scroll(function(){
-  var menuPos = $("#header").offset().top;
+  var menuPos = $("#header2").offset().top;
   $("#menu").css({
     "top":"0",
     "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
@@ -152,7 +158,7 @@ body {
     margin: 0px;
     background-color: #e3e3e3;
 }
-#header {
+#header2 {
     background-color: #FFFFFF;
     height: 1px;
 }
@@ -165,8 +171,6 @@ body {
 
 }
 </style>
-
-
 
 
 
