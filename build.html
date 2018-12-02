@@ -14,7 +14,7 @@
     <title>MyRésumé</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/buildstyle.css">
-    <link rel="stylesheet" href="./css/grid.css">
+
   </head>
   <body>
       <div class="wrapper">
@@ -126,41 +126,49 @@ if (value==2){
 </div>
 
 
+
+
+
+
 <script src="scripts/fabric.min.js"></script>
 <div class="tab"><center><h1>Edit</h1></center>
-
-    <div class="menu">
-      <div class="menu-item">1</div>
-      <div class="menu-item">2</div>
-      <div class="menu-item">3</div>
-      <div class="menu-item">4</div>
-
-    </div>
+  <div id="header"></div>
+  <div id="menu"></div>
 
 
 
+        <script>
+
+$(document).scroll(function(){
+  var menuPos = $("#header").offset().top;
+  $("#menu").css({
+    "top":"0",
+    "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
+  });
+});
+
+        </script>
 <style>
-.menu {
-  display: grid;
-  grid-column-gap: 10px;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-  width:100%;
-  overflow: hidden;
-  margin: 0;
-
+body {
+    margin: 0px;
+    background-color: #e3e3e3;
 }
+#header {
+    background-color: #FFFFFF;
+    height: 1px;
+}
+#menu {
+    background-color: #546bcb;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 
-.menu-item{
-  background-color: rgba(255,255,255,0.8);
-  border: 1px solid rgba(0,0,0,0.8);
-  padding:20px;
-  font-size:30px;
-  text-align:center;
-  float: left;
 }
 </style>
+
+
+
 
 
   <div class="canvas-container">
@@ -211,7 +219,6 @@ canvas.on('object:moving', function(options) {
   <footer>
     <p>MyRésumé, Copyright &copy; 2018</p>
   </footer>
-</div>
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
   <script>
