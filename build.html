@@ -229,6 +229,7 @@ input.invalid {
 <script src="scripts/image-picker.js"></script>
 
 <script src="templates/template1.js"></script>
+<script src="templates/template2.js"></script>
 
 <script>
 
@@ -245,9 +246,13 @@ $("select").imagepicker({
 
 
 function addTemplate(value){
-if (value==3){
+if (value==1){
   template1();
   }
+
+if (value==2){
+template2();
+}
 }
 
 
@@ -262,6 +267,7 @@ if (value==3){
 
 <canvas id="c" width="1042" height="1391" style="border: 2px solid black;"></canvas>
 <script>
+
 // add objects
 var canvas = new fabric.Canvas('c', { selection: false });
 var grid = 20;
