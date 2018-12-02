@@ -3,75 +3,70 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
 
-    <!-- SEO -->
-    <meta name = "description" content="Enter description here">
-
-    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCt5VsRDktJtu7Du6inayQ5D33-6rEuLL4",
-            authDomain: "myresume-281f2.firebaseapp.com",
-            databaseURL: "https://myresume-281f2.firebaseio.com",
-            projectId: "myresume-281f2",
-            storageBucket: "myresume-281f2.appspot.com",
-            messagingSenderId: "862304909183"
-        };
-        firebase.initializeApp(config);
-
-        function signIn(){
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithRedirect(provider);
-        }
-    </script>
 
     <title>MyRésumé</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/grid.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-         <div id="branding">
-           <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
-         </div>
-         <nav>
-          <ul>
-            <li><a href="#" onclick="signIn();">Sign In</a>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="build.html">Build</a></li>
-          </ul>
-         </nav>
-      </div>
-    </header>
-
-    <section id="homeBanner">
-      <div class="container">
-      <img src="./img/banner.png" style="max-height:800px">
-      </div>
+  <div class="wrapper">
+    <section class="page-header">
+      <header class="resume-logo">
+        <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
+      </header>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="build.html">Build</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="signin.html">signin</a></li>
+        </ul>
+      </nav>
     </section>
-
-  <section id="steps">
-    <div class="img-container">
-      <div class="step">
-        <img src="./img/icon_placeholder.png">
-        <h3>Choose Template</h3>
-      </div>
-      <div class="step">
-        <img src="./img/icon_placeholder.png"><!-- To do-->
-        <h3>Edit</h3>
-      </div>
-      <div class="step">
-        <img src="./img/icon_placeholder.png"><!-- To do-->
-        <h3>Download</h3>
-      </div>
-    </div>
-  </section>
+    <main class="index-main">
+      <section class="steps">
+        <div class="step" style="cursor: pointer;" onclick="window.location='build.html';">
+          <img src="./img/icon-select.png">
+          <h3>Choose Template</h3>
+        </div>
+        <div class="step" style="cursor: pointer;" onclick="window.location='build.html';">
+          <img src="./img/icon-type.png"><!-- To do-->
+          <h3>Enter Information</h3>
+          <a href="build.html"></a>
+        </div>
+        <div class="step" style="cursor: pointer;" onclick="window.location='build.html';">
+          <img src="./img/icon-edit.png"><!-- To do-->
+          <h3>Edit</h3>
+        </div>
+        <div class="step" style="cursor: pointer;" onclick="window.location='build.html';">
+          <img src="./img/icon-download.png"><!-- To do-->
+          <h3>Download</h3>
+        </div>
+      </section>
+    </main>
   <footer>
     <p>MyRésumé, Copyright &copy; 2018</p>
   </footer>
+  </div>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyCt5VsRDktJtu7Du6inayQ5D33-6rEuLL4",
+          authDomain: "myresume-281f2.firebaseapp.com",
+          databaseURL: "https://myresume-281f2.firebaseio.com",
+          projectId: "myresume-281f2",
+          storageBucket: "myresume-281f2.appspot.com",
+          messagingSenderId: "862304909183"
+      };
+      firebase.initializeApp(config);
+
+      function signIn(){
+          var provider = new firebase.auth.GoogleAuthProvider();
+          firebase.auth().signInWithRedirect(provider);
+      }
+  </script>
 </html>

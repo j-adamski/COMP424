@@ -14,26 +14,24 @@
     <title>MyRésumé</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/buildstyle.css">
-
+    <link rel="stylesheet" href="./css/grid.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-         <div id="branding">
-           <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
-         </div>
-         <nav>
-          <ul>
-            <li><a href="signin.html">signin</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="build.html">Build</a></li>
-          </ul>
-         </nav>
-      </div>
-    </header>
-
+      <div class="wrapper">
+        <section class="page-header">
+          <header class="resume-logo">
+            <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
+          </header>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="build.html">Build</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="signin.html">signin</a></li>
+            </ul>
+          </nav>
+        </section>
     <div class="container">
       <ul class="progressbar">
         <li class="active">Choose template</li>
@@ -213,5 +211,6 @@ canvas.on('object:moving', function(options) {
   <footer>
     <p>MyRésumé, Copyright &copy; 2018</p>
   </footer>
+</div>
   </body>
 </html>

@@ -1,0 +1,34 @@
+
+.wrapper {
+  min-height:100vh;
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 95px auto 60px;
+  grid-template-areas:
+    'page-header'
+    'content'
+    'footer';
+}
+
+.page-header{
+  grid-area:page-header;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.resume-logo{
+  grid-column: 1 / 2;
+}
+
+.main-nav {
+  grid-column: 3 / 5;
+}
+
+.index-main{
+  grid-area:content;
+}
+
+.footer{
+  grid-area:footer;
+}
