@@ -138,6 +138,40 @@ if (value==2){
   <center><h1>Edit</h1></center>
 
 
+  <div id="header2"></div>
+  <div id="menu"></div>
+
+</div>
+
+        <script>
+
+$(document).scroll(function(){
+  var menuPos = $("#header2").offset().top;
+  $("#menu").css({
+    "top":"0",
+    "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
+  });
+});
+
+        </script>
+<style>
+body {
+    margin: 0px;
+    background-color: #e3e3e3;
+}
+#header2 {
+    background-color: #FFFFFF;
+    height: 1px;
+}
+#menu {
+    background-color: #546bcb;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+}
+</style>
 
 
 
