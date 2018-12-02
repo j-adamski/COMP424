@@ -14,26 +14,24 @@
     <title>MyRésumé</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/buildstyle.css">
-
+    <link rel="stylesheet" href="./css/grid.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-         <div id="branding">
-           <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
-         </div>
-         <nav>
-          <ul>
-            <li><a href="signin.html">signin</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="build.html">Build</a></li>
-          </ul>
-         </nav>
-      </div>
-    </header>
-
+      <div class="wrapper">
+        <section class="page-header">
+          <header class="resume-logo">
+            <a href="index.html"><img src="./img/logo_white.png" style="max-width:215px;"></a>
+          </header>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="build.html">Build</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#" onclick="signIn();">Sign In</a></li>
+            </ul>
+          </nav>
+        </section>
     <div class="container">
       <ul class="progressbar">
         <li class="active">Choose template</li>
@@ -192,4 +190,22 @@ canvas.on('object:moving', function(options) {
     <p>MyRésumé, Copyright &copy; 2018</p>
   </footer>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyCt5VsRDktJtu7Du6inayQ5D33-6rEuLL4",
+          authDomain: "myresume-281f2.firebaseapp.com",
+          databaseURL: "https://myresume-281f2.firebaseio.com",
+          projectId: "myresume-281f2",
+          storageBucket: "myresume-281f2.appspot.com",
+          messagingSenderId: "862304909183"
+      };
+      firebase.initializeApp(config);
+
+      function signIn(){
+          var provider = new firebase.auth.GoogleAuthProvider();
+          firebase.auth().signInWithRedirect(provider);
+      }
+  </script>
 </html>
