@@ -109,6 +109,7 @@ background-color: #4CAF50;
 .canvas-container{
 margin-left: auto;
 margin-right:auto;
+padding-top: 15px;
 }
 
 .save-container{
