@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -99,8 +98,6 @@
 <script src="templates/template2.js"></script>
 
 <script>
-
-
 $("select").imagepicker({
   hide_select : false,
   show_label  : false,
@@ -110,24 +107,20 @@ $("select").imagepicker({
     alert(values);
   }
 });
-
-
 function addTemplate(value){
 if (value==1){
   template1();
   }
-
 if (value==2){
   template2();
   }
 }
-
 </script>
 </div>
 
 
 
-
+  <script src="scripts/canvasEdit.js"></script>
 
 
 <script src="scripts/fabric.min.js"></script>
@@ -139,12 +132,15 @@ if (value==2){
 
 
   <div id="header2"></div>
-  <div id="menu"></div>
+  <div id="menu">
+ <button2 class="menuButton" onclick="Addtext()">Add Text</button>
+
+  </div>
 
 </div>
 
-        <script>
 
+<script>
 $(document).scroll(function(){
   var menuPos = $("#header2").offset().top;
   $("#menu").css({
@@ -152,8 +148,9 @@ $(document).scroll(function(){
     "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
   });
 });
+</script>
 
-        </script>
+
 <style>
 body {
     margin: 0px;
@@ -164,14 +161,39 @@ body {
     height: 1px;
 }
 #menu {
-    background-color: #546bcb;
-    height: 200px;
+    background-color: #FFFFFF;
+    height: 150px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
     width: 100%;
     position: relative;
     z-index: 1;
 
 }
+
+
+.menuButton{
+  background-color: #FFFFFF;
+  border: 2px solid #4CAF50;
+  color: black;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
 </style>
+
 
 
 
@@ -179,11 +201,9 @@ body {
 
 <canvas id="c" width="1042" height="1391" style="border: 2px solid black;"></canvas>
 <script>
-
 // add objects
 var canvas = new fabric.Canvas('c', { selection: false });
 var grid = 20;
-
 //snap to grid
 canvas.on('object:moving', function(options) {
   options.target.set({
@@ -191,7 +211,6 @@ canvas.on('object:moving', function(options) {
     top: Math.round(options.target.top / grid) * grid
   });
 });
-
 </script>
 
 </div>
@@ -236,7 +255,6 @@ canvas.on('object:moving', function(options) {
           messagingSenderId: "862304909183"
       };
       firebase.initializeApp(config);
-
       function signIn(){
           var provider = new firebase.auth.GoogleAuthProvider();
           firebase.auth().signInWithRedirect(provider);
