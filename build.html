@@ -133,41 +133,11 @@ if (value==2){
 
 
 <script src="scripts/fabric.min.js"></script>
-<div class="tab"><center><h1>Edit</h1></center>
-  <div id="header"></div>
-  <div id="menu"></div>
+<div class="tab">
 
 
-
-        <script>
-
-$(document).scroll(function(){
-  var menuPos = $("#header").offset().top;
-  $("#menu").css({
-    "top":"0",
-    "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
-  });
-});
-
-        </script>
-<style>
-body {
-    margin: 0px;
-    background-color: #e3e3e3;
-}
-#header {
-    background-color: #FFFFFF;
-    height: 1px;
-}
-#menu {
-    background-color: #546bcb;
-    height: 200px;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-
-}
-</style>
+  <div class = "nav-container">
+  <center><h1>Edit</h1></center>
 
 
 

@@ -82,6 +82,7 @@ background-color: #ffdddd;
 /* Hide all steps by default: */
 .tab {
 display: none;
+overflow: hidden;
 }
 
 /* Make circles that indicate the steps of the form: */
