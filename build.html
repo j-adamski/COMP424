@@ -130,10 +130,18 @@ if (value==2){
   <button2 class="menuButton" onclick="deleteObjects()">Delete</button2>
  <button2 class="menuButton" onclick="Addtext()">Add Text</button2>
 
- <label for="font-control">Font family:</label>
+ <label for="font-control"></label>
 <select id="font-control" name="font-control">
     <option value="Arial">Arial</option>
-    <option value="Times New Roman">Times</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Helvetica">Helvetica</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Palatino">Palatino</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Bookman">Bookman</option>
+    <option value="Impact">Impact</option>
 </select>
 
   </div>
@@ -168,10 +176,7 @@ canvas.on('object:moving', function(options) {
 
 
 
-
-
-
-
+/* For some reason this doesn't work unless it is in this file  - will look into it later*/
 function textBoxChanged(e) {
     var target = e.target;
     message = target.value;
@@ -188,10 +193,6 @@ $(document.body).on('change', '#font-control', function () {
 
     canvas.renderAll();
 });
-
-
-
-
 
 </script>
 
