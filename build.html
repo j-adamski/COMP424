@@ -130,7 +130,7 @@ if (value==2){
   <button2 class="menuButton" onclick="deleteObjects()">Delete</button2>
  <button2 class="menuButton" onclick="Addtext()">Add Text</button2>
 
- <label for="font-control"></label>
+ <label for="font-control">Font:</label>
 <select id="font-control" name="font-control">
     <option value="Arial">Arial</option>
     <option value="Times New Roman">Times New Roman</option>
@@ -143,6 +143,12 @@ if (value==2){
     <option value="Bookman">Bookman</option>
     <option value="Impact">Impact</option>
 </select>
+
+
+<label for="font-size-control">Size</label>
+
+<input type="range" class="slider" value="" min="1" max="120" step="1" width:"10px" id="font-size-control">
+<style>.slider{ width: 100px; height: 10px;}</style>
 
   </div>
 </div>
@@ -190,9 +196,20 @@ function updateControls() {
 var fontControl = $('#font-control');
 $(document.body).on('change', '#font-control', function () {
     canvas.getActiveObject().fontFamily = fontControl.val();
-
     canvas.renderAll();
 });
+
+var fontSizeControl = $('#font-size-control');
+$(document.body).on('change', '#font-size-control', function(){
+  canvas.getActiveObject().fontSize = fontSizeControl.val();
+  //canvas.getActiveObject().set("fontSize", "30");
+  canvas.renderAll();
+});
+
+
+
+
+
 
 </script>
 
