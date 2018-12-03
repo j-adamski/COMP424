@@ -10,6 +10,14 @@ fabric.Object.prototype.transparentCorners = false;
    canvas.setWidth(500);
 
 
+
+
+function deleteObjects(){
+	var activeObject = canvas.getActiveObject();
+  canvas.remove(activeObject);
+}
+
+
 function Addtext() {
    canvas.add(new fabric.IText('Tap and Type', {
         left: 50,
