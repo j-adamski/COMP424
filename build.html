@@ -121,32 +121,20 @@ if (value==2){
 
 
   <script src="scripts/canvasEdit.js"></script>
-
-
 <script src="scripts/fabric.min.js"></script>
-
-
-
-
-
-
-
 <div class="tab">
-
-
-
   <div class = "nav-container">
   <center><h1>Edit</h1></center>
-
-
-
   <div id="header2"></div>
   <div id="menu">
   <button2 class="menuButton" onclick="deleteObjects()">Delete</button2>
  <button2 class="menuButton" onclick="Addtext()">Add Text</button2>
 
-
-
+ <label for="font-control">Font family:</label>
+<select id="font-control" name="font-control">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times</option>
+</select>
 
   </div>
 </div>
@@ -176,6 +164,42 @@ canvas.on('object:moving', function(options) {
     top: Math.round(options.target.top / grid) * grid
   });
 });
+
+
+
+
+
+
+
+    var mytext = new fabric.IText('Type some Text', {
+        fontFamily: 'Arial',
+        left: 100,
+        top: 100
+    });
+
+canvas.add(mytext);
+
+
+function textBoxChanged(e) {
+    var target = e.target;
+    message = target.value;
+    drawScreen();
+}
+
+function updateControls() {
+    textControl.value = canvas.getActiveObject().getText();
+}
+
+var fontControl = $('#font-control');
+$(document.body).on('change', '#font-control', function () {
+    mytext.fontFamily = fontControl.val();
+    canvas.renderAll();
+});
+
+
+
+
+
 </script>
 
 </div>
