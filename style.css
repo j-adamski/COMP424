@@ -81,11 +81,29 @@ div.step{
 }
 /* End Index Page*/
 
-/* Blog Page*/
+/* Resources Page*/
+main.resource-main{
+  background-image: url(../img/circles-light.png);
+  background-size: auto;
+  padding: 10px;
+}
 
+section.examples{
+  padding: 10px;
+}
 
+header.example-header{
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+}
 
-/* End Blog Page*/
+div.example{
+  display: inline-block;
+  padding:10px;
+  margin:5px;
+}
+/* End Resources Page*/
 
 footer{
   border-top:#76323f 5px solid;
