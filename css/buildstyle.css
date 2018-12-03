@@ -119,3 +119,47 @@ margin-left: auto;
 margin-right:auto;
 
 }
+
+
+
+/* Canvas style */
+
+body {
+    margin: 0px;
+    background-color: #e3e3e3;
+}
+#header2 {
+    background-color: #FFFFFF;
+    height: 1px;
+}
+#menu {
+    background-color: #FFFFFF;
+    height: 150px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+}
+
+
+.menuButton{
+  background-color: #FFFFFF;
+  border: 2px solid #4CAF50;
+  color: black;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+    background-color: #4CAF50;
+    color: white;
+}

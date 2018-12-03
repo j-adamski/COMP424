@@ -25,6 +25,7 @@
             <ul>
               <li><a href="build.html">Build</a></li>
               <li><a href="resources.html">Resources</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="#" onclick="signIn();">Sign In</a></li>
             </ul>
@@ -120,71 +121,42 @@ if (value==2){
 
 
   <script src="scripts/canvasEdit.js"></script>
-
-
 <script src="scripts/fabric.min.js"></script>
 <div class="tab">
-
-
   <div class = "nav-container">
   <center><h1>Edit</h1></center>
-
-
   <div id="header2"></div>
   <div id="menu">
   <button2 class="menuButton" onclick="deleteObjects()">Delete</button2>
  <button2 class="menuButton" onclick="Addtext()">Add Text</button2>
 
+ <label for="font-control"></label>
+<select id="font-control" name="font-control">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Helvetica">Helvetica</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Palatino">Palatino</option>
+    <option value="Garamond">Garamond</option>
+    <option value="Bookman">Bookman</option>
+    <option value="Impact">Impact</option>
+</select>
 
-
+  </div>
 </div>
 
 
-<style>
-body {
-    margin: 0px;
-    background-color: #e3e3e3;
-}
-#header2 {
-    background-color: #FFFFFF;
-    height: 1px;
-}
-#menu {
-    background-color: #FFFFFF;
-    height: 150px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-
-}
-
-
-.menuButton{
-  background-color: #FFFFFF;
-  border: 2px solid #4CAF50;
-  color: black;
-  padding: 10px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.menuButton:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-</style>
-
-
-
+<script>
+$(document).scroll(function(){
+  var menuPos = $("#header2").offset().top;
+  $("#menu").css({
+    "top":"0",
+    "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
+  });
+});
+</script>
 
   <div class="canvas-container">
 
@@ -204,15 +176,28 @@ canvas.on('object:moving', function(options) {
 
 
 
+/* For some reason this doesn't work unless it is in this file  - will look into it later*/
+function textBoxChanged(e) {
+    var target = e.target;
+    message = target.value;
+    drawScreen();
+}
+
+function updateControls() {
+    textControl.value = canvas.getActiveObject().getText();
+}
+
+var fontControl = $('#font-control');
+$(document.body).on('change', '#font-control', function () {
+    canvas.getActiveObject().fontFamily = fontControl.val();
+
+    canvas.renderAll();
+});
 
 </script>
 
 </div>
 </div>
-
-
-</div>
-
 
 
 <div class="tab"><center><h1>Download</h1></center>
