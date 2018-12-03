@@ -171,14 +171,6 @@ canvas.on('object:moving', function(options) {
 
 
 
-    var mytext = new fabric.IText('Type some Text', {
-        fontFamily: 'Arial',
-        left: 100,
-        top: 100
-    });
-
-canvas.add(mytext);
-
 
 function textBoxChanged(e) {
     var target = e.target;
@@ -192,7 +184,8 @@ function updateControls() {
 
 var fontControl = $('#font-control');
 $(document.body).on('change', '#font-control', function () {
-    mytext.fontFamily = fontControl.val();
+    canvas.getActiveObject().fontFamily = fontControl.val();
+
     canvas.renderAll();
 });
 
