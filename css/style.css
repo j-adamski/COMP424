@@ -53,6 +53,10 @@ nav a{
 nav a:hover{
   color:#C09F80;
 }
+
+#in #out{
+  display: none;
+}
 /* End Header*/
 
 /* Index Page */
@@ -103,6 +107,7 @@ div.example{
   padding:10px;
   margin:5px;
 }
+
 /* End Resources Page*/
 
 footer{

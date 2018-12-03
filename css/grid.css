@@ -1,0 +1,128 @@
+
+.wrapper {
+  min-height:100vh;
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 95px auto 60px;
+  grid-template-areas:
+    'page-header'
+    'content'
+    'footer';
+}
+
+.page-header{
+  grid-area:page-header;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.resume-logo{
+  grid-column: 1 / 2;
+}
+
+.main-nav {
+  grid-column: 3 / 5;
+}
+
+
+.resource-main{
+  grid-area:content;
+  display:grid;
+  grid-gap:10px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr 1fr 1fr;
+  /* grid-template-areas: 'examples'; */
+	grid-template-areas:
+  'examplegrid'
+  'linksgrid'
+  'newsgrid';
+}
+
+.example-grid{
+  grid-area: examplegrid;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px 1fr;
+  /* grid-template-areas: 'examples'; */
+	grid-template-areas:
+  'header'
+  'examples';
+  border: 1px solid #000;
+	margin: 1%;
+}
+
+.example-header {
+  grid-area: header;
+  border: 1px solid #000;
+}
+
+.examples{
+  grid-area: examples;
+	display: flex;
+	justify-content: left;
+	align-items:flex-start;
+  /* align-content:flex-start; */
+	overflow: auto;
+  border: 1px solid #000;
+  padding: 10px;
+  margin: ;
+}
+
+.example {
+	/* align-self:center; */
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.link-grid{
+  grid-area: linksgrid;
+  display:grid;
+  grid-gap:10px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px 1fr;
+  /* grid-template-areas: 'examples'; */
+	grid-template-areas:
+  'linkheader'
+  'links';
+  border: 1px solid #000;
+	margin: 1%;
+}
+
+.linksheader {
+  grid-area: linkheader;
+  border: 1px solid #000;
+}
+
+.links{
+  grid-area: links;
+  border: 1px solid #000;
+}
+
+.news-grid{
+  grid-area: newsgrid;
+  display:grid;
+  grid-gap:10px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px 1fr;
+  /* grid-template-areas: 'examples'; */
+	grid-template-areas:
+  'newsheader'
+  'news';
+  border: 1px solid #000;
+	margin: 1%;
+}
+
+.newsheader {
+  grid-area: newsheader;
+  border: 1px solid #000;
+}
+
+.news{
+  grid-area:news;
+  border: 1px solid #000;
+}
+
+.footer{
+  grid-area:footer;
+}

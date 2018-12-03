@@ -19,15 +19,18 @@
             <li><a href="build.html">Build</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#" onclick="signIn();">Sign In</a></li>
+            <li id="in"><a href="#" onclick="signIn();">Sign In</a></li>
+            <li id="out'"><a href="#" onclick="signOut();">Sign Out </a></li>
           </ul>
         </nav>
       </section>
       <main class="resource-main">
+        <section class="example-grid">
+        <header class="example-header">Resume Examples</header>
         <section class="examples">
-          <header class="example-header">Resume Examples</header>
           <div class="example">
             <img src="./img/example1.jpg" style="max-width:215px;">
+            <p>Example1</p>
           </div>
           <div class="example">
             <img src="./img/example2.jpg" style="max-width:215px;">
@@ -45,6 +48,21 @@
             <img src="./img/example6.jpg" style="max-width:215px;">
           </div>
         </section>
+      </section>
+      <section class="link-grid">
+        <header class="linksheader"> Links </header>
+        <section class="links">
+          <p> link 1 </p>
+          <p> link 2 </p>
+        </section>
+      </section>
+      <section class="news-grid">
+        <header class="newsheader"> News </header>
+        <section class="news">
+          <p> news 1 </p>
+          <p> news 2 </p>
+        </section>
+      </section>
       </main>
     <footer>
       <p>MyRésumé, Copyright &copy; 2018</p>
@@ -64,9 +82,24 @@
     };
     firebase.initializeApp(config);
 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        document.getElementById("out").style.display = "block";
+        document.getElementById("in").style.display = "none";
+      } else {
+        document.getElementById("out").style.display = "none";
+        document.getElementById("in").style.display = "block";
+        }
+      });
+
     function signIn(){
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
     }
+
+    function signOut(){
+        firebase.auth().signOut();
+    }
+
 </script>
 </html>
