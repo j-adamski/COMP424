@@ -162,3 +162,7 @@ body {
     background-color: #4CAF50;
     color: white;
 }
+
+.menu-item{
+  display: inline-block;
+}
