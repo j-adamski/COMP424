@@ -25,6 +25,7 @@
             <ul>
               <li><a href="build.html">Build</a></li>
               <li><a href="resources.html">Resources</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="#" onclick="signIn();">Sign In</a></li>
             </ul>
@@ -123,11 +124,20 @@ if (value==2){
 
 
 <script src="scripts/fabric.min.js"></script>
+
+
+
+
+
+
+
 <div class="tab">
+
 
 
   <div class = "nav-container">
   <center><h1>Edit</h1></center>
+
 
 
   <div id="header2"></div>
@@ -137,54 +147,20 @@ if (value==2){
 
 
 
+
+  </div>
 </div>
 
 
-<style>
-body {
-    margin: 0px;
-    background-color: #e3e3e3;
-}
-#header2 {
-    background-color: #FFFFFF;
-    height: 1px;
-}
-#menu {
-    background-color: #FFFFFF;
-    height: 150px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-
-}
-
-
-.menuButton{
-  background-color: #FFFFFF;
-  border: 2px solid #4CAF50;
-  color: black;
-  padding: 10px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.menuButton:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-</style>
-
-
-
+<script>
+$(document).scroll(function(){
+  var menuPos = $("#header2").offset().top;
+  $("#menu").css({
+    "top":"0",
+    "position": $(this).scrollTop()> menuPos ? "fixed" : "relative"
+  });
+});
+</script>
 
   <div class="canvas-container">
 
@@ -200,19 +176,10 @@ canvas.on('object:moving', function(options) {
     top: Math.round(options.target.top / grid) * grid
   });
 });
-
-
-
-
-
 </script>
 
 </div>
 </div>
-
-
-</div>
-
 
 
 <div class="tab"><center><h1>Download</h1></center>
