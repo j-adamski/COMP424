@@ -22,14 +22,12 @@ body{
 
 .home_banner img {
   width: 100%;
-
   height: auto;
 }
 
 
 /*button pulse*/
 .home_banner .pulse-button {
-
   position: absolute;
   top: 44%;
   left: 15%;
@@ -47,9 +45,9 @@ body{
   -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
   animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
   color: white;
-    font-size: 30px;
-    padding: 12px 24px;
-    padding-top: 30px;
+  font-size: 30px;
+  padding: 12px 24px;
+  padding-top: 30px;
 }
 .pulse-button:hover
 {
