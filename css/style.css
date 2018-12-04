@@ -108,7 +108,7 @@ nav a:hover{
 }
 
 #in #out{
-  display: none;
+  visibility: visible;
 }
 /* End Header*/
 

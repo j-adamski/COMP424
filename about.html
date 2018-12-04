@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"initial-scale="1.0">
-    <title>MyRésumé</title>
+    <title>MyRésumé - About</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/grid.css">
   </head>
@@ -19,7 +19,8 @@
             <li><a href="build.html">Build</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#" onclick="signIn();">Sign In</a></li>
+            <li id="in"><a href="#" onclick="signIn();">Sign In</a></li>
+            <li id="out"><a href="#" onclick="signOut();">Sign Out </a></li>
           </ul>
         </nav>
       </section>
@@ -66,9 +67,25 @@
     };
     firebase.initializeApp(config);
 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        document.getElementById("out").style.display = "block";
+        document.getElementById("in").style.display = "none";
+      } else {
+        document.getElementById("out").style.display = "none";
+        document.getElementById("in").style.display = "block";
+        }
+      });
+
     function signIn(){
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
     }
+
+    function signOut(){
+        firebase.auth().signOut();
+        window.alert("You have signed out, you might need to reload the page.");
+    }
+
 </script>
 </html>

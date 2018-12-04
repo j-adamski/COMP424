@@ -25,6 +25,10 @@
   grid-column: 3 / 5;
 }
 
+.index-main{
+  grid-area:content;
+}
+
 
 .resource-main{
   grid-area:content;
