@@ -293,12 +293,37 @@ canvas.getActiveObject().centerH();
 
 </div>
 </div>
-
+<style>
+  #save{
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+    height: 29px;
+  }
+  div.g-savetodrive{
+    width: 230px;
+    height: 29px;
+    justify-content: center;
+    align-items: center;
+  }
+  .save-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
 
 <div class="tab"><center><h1>Download</h1></center>
   <div class="save-container">
-  <input type="submit" name="submit" id="save" value="Download" />
-    <script src="scripts/save.js"></script>
+    <button id="save" input type="submit" name="submit" value="Download">
+      <h> Download in browser </h>
+      <script src="scripts/save.js"></script>
+    </button>
+      <div class="g-savetodrive"
+       data-src="../example/example.pdf"
+       data-filename="saveresume.pdf"
+       data-sitename="MyResume">
+      </div>
   </div>
 </div>
 
@@ -321,6 +346,7 @@ canvas.getActiveObject().centerH();
     <p>MyRésumé, Copyright &copy; 2018</p>
   </footer>
   </body>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
   <script>
       // Initialize Firebase
@@ -353,6 +379,7 @@ canvas.getActiveObject().centerH();
           firebase.auth().signOut();
           window.alert("You have signed out, you might need to reload the page.");
       }
+
 
   </script>
 </html>
