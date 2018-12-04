@@ -54,6 +54,16 @@
 
 <form id="regForm" action="">
 
+
+
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+
+
 <!-- One "tab" for each step in the form: -->
 <div class="tab"><center><h1>Select Template</h1></center>
 
@@ -327,12 +337,6 @@ canvas.getActiveObject().centerH();
   </div>
 </div>
 
-<div style="overflow:auto;">
-  <div style="float:right;">
-    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-  </div>
-</div>
 
 <!-- Circles which indicates the steps of the form: -->
 <div style="text-align:center;margin-top:40px;">
