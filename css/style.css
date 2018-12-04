@@ -61,6 +61,42 @@ nav a:hover{
   color:#C09F80;
 }
 
+nav span{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:20px;
+  position:relative;
+}
+nav span:hover{
+  color:#C09F80;
+}
+
+
+.drop {
+  display:none;
+  position:absolute;
+  background-color:black;
+  z-index: 1;
+  padding:5px;
+  border-radius: 5px;
+}
+
+.drop a{
+    color:white;
+    text-transform: none;
+    padding-bottom: 10px;
+}
+
+.dropdown{
+  position:relative;
+  display:inline-block;
+}
+
+.dropdown:hover .drop{
+  display:block;
+}
+
 #in #out{
   visibility: visible;
 }
@@ -133,7 +169,7 @@ div.step{
 /* End Index Page*/
 
 /* Resources Page*/
-main.resource-main{
+main.example-main{
   background-image: url(../img/circles-light.png);
   background-size: auto;
   padding: 10px;
