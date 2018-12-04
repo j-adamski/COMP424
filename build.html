@@ -139,8 +139,20 @@ if (value==2){
     <div class="menu-item">
   <button2 class="menuButton" onclick="deleteObjects()">Delete</button2>
 </div>
+
+<div class="menu-item">
+   <button2 class="menuButton" onclick="centerObject()">Center</button2></div>
+
 <div class="menu-item">
  <button2 class="menuButton" onclick="Addtext()">Add Text</button2></div>
+
+ <div class="menu-item">
+    <button2 class="menuButton" onclick="changeFontStyle()">B</button2></div>
+
+    <div class="menu-item">
+       <button2 class="menuButton" onclick="deleteBold()"><strike>B</strike></button2></div>
+
+
 
 <div class="menu-item">
  <label for="font-control">Font:</label>
@@ -161,12 +173,19 @@ if (value==2){
 <div class="menu-item">
 <select id="font-size-control" name="font-size-control">
     <option value="5">5</option>
+      <option value="10">10</option>
+        <option value="15">15</option>
     <option value="20">20</option>
+      <option value="25">25</option>
     <option value="30">30</option>
+      <option value="35">35</option>
     <option value="40">40</option>
+      <option value="45">45</option>
     <option value="50">50</option>
+      <option value="55">55</option>
     <option value="60">60</option>
-
+      <option value="65">65</option>
+  <option value="70">70</option>
 </select></div>
 
 
@@ -249,6 +268,25 @@ $(document.body).on('change', '#font-size-control', function(){
 });
 
 
+
+function changeFontStyle(){
+var activeObject = canvas.getActiveObject();
+
+if ("fontStyle" != "bold"){
+canvas.getActiveObject().set("fontStyle","bold");
+}
+canvas.renderAll();
+}
+
+function deleteBold(){
+canvas.getActiveObject().set("fontStyle","normal");
+  canvas.renderAll();
+}
+
+function centerObject(){
+canvas.getActiveObject().centerH();
+  canvas.renderAll();
+}
 
 
 </script>
