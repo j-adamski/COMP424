@@ -64,7 +64,7 @@
   <select class="image-picker show-html">
 
     <optgroup label="Traditional">
-      <option data-img-src="img/resume_placeholder.jpg" value="1">Resume 1</option>
+      <option data-img-src="img/templates/1.png" value="1">Resume 1</option>
       <option data-img-src="img/resume_placeholder.jpg" value="2">Resume 2</option>
       <option data-img-src="img/resume_placeholder.jpg" value="3">Resume 3</option>
       <option data-img-src="img/resume_placeholder.jpg" value="4">Resume 4</option>
@@ -100,7 +100,7 @@
 
 <script>
 $("select").imagepicker({
-  hide_select : false,
+  hide_select : true,
   show_label  : false,
   selected: function(option){
     var values = this.val();
@@ -163,6 +163,8 @@ if (value==2){
 </select></div>
 
 
+
+
 <br><br> <checkbox-label><input type="checkbox" id="edit-text" />Edit Text</checkbox-label>
 <checkbox-label><input type="checkbox" id="edit-design" />Edit Design</checkbox-label>
 
@@ -203,8 +205,8 @@ $(document).scroll(function(){
 <canvas id="c" width="1042" height="1391" style="border: 2px solid black;"></canvas>
 <script>
 // add objects
-var canvas = new fabric.Canvas('c', { selection: false });
-var grid = 20;
+var canvas = new fabric.Canvas('c', { selection: true });
+var grid = 10;
 //snap to grid
 canvas.on('object:moving', function(options) {
   options.target.set({
@@ -238,8 +240,6 @@ $(document.body).on('change', '#font-size-control', function(){
   //canvas.getActiveObject().set("fontSize", "30");
   canvas.renderAll();
 });
-
-
 
 
 
