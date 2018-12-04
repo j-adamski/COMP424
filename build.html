@@ -72,7 +72,7 @@
 
     <optgroup label="Traditional">
       <option data-img-src="img/templates/1.png" value="1">Resume 1</option>
-      <option data-img-src="img/resume_placeholder.jpg" value="2">Resume 2</option>
+      <option data-img-src="img/templates/2.png" value="2">Resume 2</option>
       <option data-img-src="img/resume_placeholder.jpg" value="3">Resume 3</option>
       <option data-img-src="img/resume_placeholder.jpg" value="4">Resume 4</option>
     </optgroup>
@@ -112,7 +112,7 @@ $("select").imagepicker({
   selected: function(option){
     var values = this.val();
     addTemplate(values);
-    alert(values);
+
   }
 });
 function addTemplate(value){
